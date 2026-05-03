@@ -193,6 +193,16 @@
       border-radius: 50%; pointer-events: none;
     }
 
+    /* Hero layout — mobile first (empilhado) */
+    .hero-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+    .hero-text { width: 100%; }
+
+    /* Espaçamentos dos elementos do hero */
     .hero-badge {
       display: inline-block;
       background: var(--cta);
@@ -201,44 +211,35 @@
       text-transform: uppercase; letter-spacing: .1em;
       padding: 8px 22px;
       border-radius: 100px;
-      margin-bottom: 28px;
+      margin-bottom: 16px;
     }
-
-    #hero h1 { margin-bottom: 22px; max-width: 640px; margin-left: auto; margin-right: auto; }
-
+    #hero h1 { margin-bottom: 20px; max-width: 640px; margin-left: auto; margin-right: auto; }
     .hero-sub {
       font-size: clamp(16px, 3vw, 21px);
       opacity: .82;
       max-width: 580px;
-      margin: 0 auto 36px;
+      margin: 0 auto 32px;
     }
-
-    .hero-cta-wrap { max-width: 440px; margin: 0 auto 14px; }
-
+    .hero-cta-wrap { max-width: 440px; margin: 0 auto 12px; }
     .hero-safe {
       font-size: 13px;
       color: var(--green);
       font-weight: 700;
-      margin-bottom: 44px;
+      margin-bottom: 40px;
     }
 
-    /* Hero layout */
-    .hero-inner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
+    /* Mockup — mobile: 90% da viewport */
+    .mockup-wrap {
+      width: 90vw;
+      max-width: 90vw;
+      margin: 0 auto;
     }
-    .hero-text { width: 100%; }
-
-    /* Mockup */
-    .mockup-wrap { max-width: 340px; width: 100%; margin: 0 auto; }
     .mockup-wrap img {
       width: 100%;
       height: auto;
       display: block;
       border-radius: var(--r-lg);
-      box-shadow: 0 32px 80px rgba(42,23,8,.22), 0 8px 20px rgba(42,23,8,.10);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
     /* ============================================================
@@ -490,26 +491,36 @@
       .garantia-box p { margin-left: 0; }
     }
 
-    @media (min-width: 860px) {
+    /* Tablet: 600–768px — empilhado, mockup 80% */
+    @media (min-width: 600px) and (max-width: 767px) {
+      .mockup-wrap {
+        width: 80vw;
+        max-width: 80vw;
+      }
+    }
+
+    /* Desktop: acima de 768px — lado a lado, 50/50 */
+    @media (min-width: 768px) {
       .hero-inner {
         flex-direction: row;
         align-items: center;
-        gap: 56px;
+        gap: 48px;
         text-align: left;
       }
       .hero-text {
-        flex: 1 1 0;
+        flex: 1 1 50%;
+        min-width: 0;
       }
-      .hero-text h1,
-      .hero-text .hero-sub,
-      .hero-text .hero-cta-wrap,
-      .hero-text .hero-safe,
-      .hero-text .r { margin-left: 0; margin-right: 0; text-align: left; }
-      .hero-text .hero-cta-wrap { max-width: none; }
+      #hero h1 { margin-left: 0; margin-right: 0; max-width: none; }
+      .hero-sub { margin-left: 0; margin-right: 0; max-width: none; }
+      .hero-cta-wrap { margin-left: 0; margin-right: 0; max-width: none; }
+      .hero-safe { text-align: left; }
       .mockup-wrap {
-        flex: 0 0 340px;
+        flex: 1 1 50%;
+        min-width: 0;
+        width: auto;
+        max-width: 500px;
         margin: 0;
-        order: 2;
       }
     }
   </style>
