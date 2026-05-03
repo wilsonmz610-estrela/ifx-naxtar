@@ -327,48 +327,6 @@
     .bonus-crossed { font-size: 15px; opacity: .5; text-decoration: line-through; margin-bottom: 6px; }
     .bonus-price { font-family: var(--serif); font-size: clamp(20px, 4vw, 26px); font-weight: 800; color: var(--cta); }
 
-    /* ============================================================
-       SEÇÃO 7 — PROVA SOCIAL
-    ============================================================ */
-    .testimonials { display: flex; flex-direction: column; gap: 16px; }
-    .t-card {
-      background: var(--bg-alt);
-      border: 1px solid var(--accent);
-      border-radius: var(--r-lg);
-      padding: 28px;
-      position: relative;
-    }
-    .t-card::before {
-      content: '\201C';
-      position: absolute; top: 10px; left: 18px;
-      font-family: var(--serif); font-size: 64px;
-      color: var(--cta); opacity: .2; line-height: 1;
-    }
-    .t-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
-    .t-avatar {
-      width: 52px; height: 52px; border-radius: 50%;
-      background: var(--accent); flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px; opacity: .55;
-      border: 2px dashed var(--cta);
-      overflow: hidden;
-    }
-    /*
-      INSTRUÇÃO: quando tiver a foto real, adicionar dentro de .t-avatar:
-      <img src="assets/images/depoimento-1.webp" alt="Nome" />
-    */
-    .t-name { font-size: 15px; font-weight: 700; color: var(--headline); display: block; }
-    .t-city { font-size: 13px; opacity: .55; }
-    .t-text { font-size: 15px; font-style: italic; line-height: 1.7; margin: 0; }
-
-    .t-note {
-      margin-top: 20px;
-      padding: 14px 18px;
-      background: rgba(107,142,90,.1);
-      border-left: 3px solid var(--green);
-      border-radius: var(--r);
-      font-size: 13px; opacity: .8;
-    }
 
     /* ============================================================
        SEÇÃO 8 — OFERTA
@@ -527,7 +485,6 @@
 
       .benefits-grid { grid-template-columns: 1fr 1fr; }
       .bonus-grid    { grid-template-columns: 1fr 1fr; }
-      .testimonials  { flex-direction: row; }
 
       .garantia-box { flex-direction: row; text-align: left; }
       .garantia-box p { margin-left: 0; }
@@ -760,68 +717,6 @@
 </section>
 
 
-<!-- ============================================================
-     SEÇÃO 7 — PROVA SOCIAL
-     NOTA: adicione style="display:none" abaixo para ocultar no MVP.
-     Ative quando tiver depoimentos reais dos primeiros compradores.
-============================================================ -->
-<section id="prova-social">
-  <div class="wrap">
-
-    <h2 class="r">O que estão dizendo sobre o Manual</h2>
-
-    <div class="testimonials">
-
-      <!-- Depoimento 1 — placeholder -->
-      <div class="t-card r d1">
-        <div class="t-head">
-          <div class="t-avatar">
-            <!-- IMAGEM REAL: <img src="assets/images/depoimento-1.webp" alt="Nome" /> -->
-            👤
-          </div>
-          <div>
-            <span class="t-name">Nome da Compradora</span>
-            <span class="t-city">São Paulo, SP</span>
-          </div>
-        </div>
-        <p class="t-text">"Depoimento real a ser inserido após os primeiros compradores."</p>
-      </div>
-
-      <!-- Depoimento 2 — placeholder -->
-      <div class="t-card r d2">
-        <div class="t-head">
-          <div class="t-avatar">👤</div>
-          <div>
-            <span class="t-name">Nome do Comprador</span>
-            <span class="t-city">Rio de Janeiro, RJ</span>
-          </div>
-        </div>
-        <p class="t-text">"Depoimento real a ser inserido após os primeiros compradores."</p>
-      </div>
-
-      <!-- Depoimento 3 — placeholder -->
-      <div class="t-card r d3">
-        <div class="t-head">
-          <div class="t-avatar">👤</div>
-          <div>
-            <span class="t-name">Nome da Compradora</span>
-            <span class="t-city">Belo Horizonte, MG</span>
-          </div>
-        </div>
-        <p class="t-text">"Depoimento real a ser inserido após os primeiros compradores."</p>
-      </div>
-
-    </div>
-
-    <!-- Remover esta nota antes de publicar com depoimentos reais -->
-    <div class="t-note r">
-      <strong>Nota de desenvolvimento:</strong> Seção com placeholders. Para ocultar no MVP, adicione
-      <code>style="display:none"</code> na tag <code>&lt;section id="prova-social"&gt;</code>.
-      Não inventar depoimentos — substituir pelos reais após as primeiras compras.
-    </div>
-
-  </div>
-</section>
 
 
 <!-- ============================================================
