@@ -222,38 +222,24 @@
       margin-bottom: 44px;
     }
 
-    /* Mockup */
-    .mockup-wrap { max-width: 320px; margin: 0 auto; }
+    /* Hero layout */
+    .hero-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+    .hero-text { width: 100%; }
 
-    .mockup-ph {
-      aspect-ratio: 3 / 4;
-      background: linear-gradient(145deg, var(--accent) 0%, var(--bg-alt) 50%, var(--accent) 100%);
+    /* Mockup */
+    .mockup-wrap { max-width: 340px; width: 100%; margin: 0 auto; }
+    .mockup-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
       border-radius: var(--r-lg);
-      border: 2px dashed var(--cta);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 10px; padding: 28px; text-align: center;
-      box-shadow: 0 24px 64px rgba(42,23,8,.16), 0 4px 12px rgba(42,23,8,.08);
-      position: relative; overflow: hidden;
+      box-shadow: 0 32px 80px rgba(42,23,8,.22), 0 8px 20px rgba(42,23,8,.10);
     }
-    .mockup-ph::before {
-      content: '';
-      position: absolute; top: -40px; right: -40px;
-      width: 140px; height: 140px;
-      background: rgba(212,118,44,.09); border-radius: 50%;
-    }
-    .mockup-ph-icon  { font-size: 52px; line-height: 1; }
-    .mockup-ph-title { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--headline); }
-    .mockup-ph-sub   { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; opacity: .55; }
-    .mockup-ph-note  {
-      font-size: 11px; color: var(--cta); font-weight: 700;
-      background: rgba(212,118,44,.1); padding: 6px 12px; border-radius: 100px;
-      line-height: 1.5;
-    }
-    /*
-      INSTRUÇÃO: quando tiver o mockup real, substituir .mockup-ph por:
-      <img src="assets/images/mockup-ebook.webp" alt="Manual Low Carb" width="320" loading="eager" />
-    */
 
     /* ============================================================
        SEÇÃO 2 — PROBLEMA
@@ -546,6 +532,29 @@
       .garantia-box { flex-direction: row; text-align: left; }
       .garantia-box p { margin-left: 0; }
     }
+
+    @media (min-width: 860px) {
+      .hero-inner {
+        flex-direction: row;
+        align-items: center;
+        gap: 56px;
+        text-align: left;
+      }
+      .hero-text {
+        flex: 1 1 0;
+      }
+      .hero-text h1,
+      .hero-text .hero-sub,
+      .hero-text .hero-cta-wrap,
+      .hero-text .hero-safe,
+      .hero-text .r { margin-left: 0; margin-right: 0; text-align: left; }
+      .hero-text .hero-cta-wrap { max-width: none; }
+      .mockup-wrap {
+        flex: 0 0 340px;
+        margin: 0;
+        order: 2;
+      }
+    }
   </style>
 
   <!-- PIXEL DO META: Cole aqui o código do Pixel quando configurar a campanha -->
@@ -557,49 +566,41 @@
 ============================================================ -->
 <section id="hero">
   <div class="wrap">
+    <div class="hero-inner">
 
-    <div class="r">
-      <span class="hero-badge">50 receitas testadas e aprovadas</span>
-    </div>
+      <!-- Texto -->
+      <div class="hero-text">
+        <div class="r">
+          <span class="hero-badge">50 receitas testadas e aprovadas</span>
+        </div>
 
-    <h1 class="r d1">
-      Imagine Ter 50&nbsp;Receitas Low&nbsp;Carb Deliciosas Sempre à Mão. E Fazer Qualquer Uma Delas Em Menos de 30&nbsp;Minutos.
-    </h1>
+        <h1 class="r d1">
+          Imagine Ter 50&nbsp;Receitas Low&nbsp;Carb Deliciosas Sempre à Mão. E Fazer Qualquer Uma Delas Em Menos de 30&nbsp;Minutos.
+        </h1>
 
-    <p class="hero-sub r d2">
-      Transforme sua rotina alimentar com receitas práticas, gostosas e sem culpa. Baixe agora e comece a comer melhor hoje mesmo.
-    </p>
+        <p class="hero-sub r d2">
+          Transforme sua rotina alimentar com receitas práticas, gostosas e sem culpa. Baixe agora e comece a comer melhor hoje mesmo.
+        </p>
 
-    <!-- CTA 1 de 3 -->
-    <div class="hero-cta-wrap r d3">
-      <!-- ⚠️ SUBSTITUIR o href="#" pela URL do checkout do Kiwify -->
-      <a href="https://pay.kiwify.com.br/cTp4QVc" class="cta" id="cta-hero">QUERO MINHAS 50 RECEITAS AGORA →</a>
-    </div>
+        <!-- CTA 1 de 3 -->
+        <div class="hero-cta-wrap r d3">
+          <a href="https://pay.kiwify.com.br/cTp4QVc" class="cta" id="cta-hero">QUERO MINHAS 50 RECEITAS AGORA →</a>
+        </div>
 
-    <p class="hero-safe r d4">✓ Acesso imediato após a compra &nbsp;·&nbsp; Garantia de 7 dias</p>
+        <p class="hero-safe r d4">✓ Acesso imediato após a compra &nbsp;·&nbsp; Garantia de 7 dias</p>
+      </div>
 
-    <!-- Mockup do ebook -->
-    <div class="mockup-wrap r">
-      <!--
-        IMAGEM REAL — substituir este bloco quando disponível:
+      <!-- Mockup do ebook -->
+      <div class="mockup-wrap r">
         <img
-          src="assets/images/mockup-ebook.webp"
-          alt="Mockup 3D do Manual Low Carb"
-          width="320"
+          src="assets/images/mockup-3d.png"
+          alt="Mockup 3D do Manual Low Carb — 50 Receitas Rápidas"
+          width="340"
           loading="eager"
         />
-      -->
-      <div class="mockup-ph">
-        <div class="mockup-ph-icon">📗</div>
-        <div class="mockup-ph-title">Manual Low Carb</div>
-        <div class="mockup-ph-sub">50 Receitas Rápidas</div>
-        <div class="mockup-ph-note">
-          📷 Inserir mockup 3D do ebook<br>
-          <small>WebP recomendado · max 200 KB</small>
-        </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </section>
 
