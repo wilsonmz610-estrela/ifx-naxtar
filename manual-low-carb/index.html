@@ -171,9 +171,12 @@
     /* ============================================================
        SEÇÃO 1 — HERO
     ============================================================ */
+    /* ============================================================
+       SEÇÃO 1 — HERO
+    ============================================================ */
     #hero {
-      padding-top: 56px;
-      padding-bottom: 64px;
+      background: #FAF6F1;
+      padding: 48px 20px;
       text-align: center;
       overflow: hidden;
       position: relative;
@@ -193,16 +196,14 @@
       border-radius: 50%; pointer-events: none;
     }
 
-    /* Hero layout — mobile first (empilhado) */
+    /* Coluna única em todos os tamanhos */
     .hero-inner {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 32px;
     }
     .hero-text { width: 100%; }
 
-    /* Espaçamentos dos elementos do hero */
     .hero-badge {
       display: inline-block;
       background: var(--cta);
@@ -211,35 +212,44 @@
       text-transform: uppercase; letter-spacing: .1em;
       padding: 8px 22px;
       border-radius: 100px;
-      margin-bottom: 16px;
+      margin-bottom: 24px;
     }
-    #hero h1 { margin-bottom: 20px; max-width: 640px; margin-left: auto; margin-right: auto; }
+    #hero h1 {
+      margin-bottom: 20px;
+      max-width: 720px;
+      margin-left: auto; margin-right: auto;
+    }
     .hero-sub {
       font-size: clamp(16px, 3vw, 21px);
       opacity: .82;
-      max-width: 580px;
+      max-width: 600px;
       margin: 0 auto 32px;
     }
-    .hero-cta-wrap { max-width: 440px; margin: 0 auto 12px; }
+    .hero-cta-wrap { max-width: 440px; margin: 0 auto 16px; }
     .hero-safe {
       font-size: 13px;
       color: var(--green);
       font-weight: 700;
-      margin-bottom: 40px;
+      margin-bottom: 48px;
     }
 
-    /* Mockup — mobile: 90% da viewport */
+    /* Mockup */
     .mockup-wrap {
-      width: 90vw;
-      max-width: 90vw;
+      width: 90%;
+      max-width: 90%;
       margin: 0 auto;
     }
     .mockup-wrap img {
       width: 100%;
       height: auto;
       display: block;
-      border-radius: var(--r-lg);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    @media (min-width: 768px) {
+      #hero { padding: 80px 24px; }
+      .mockup-wrap { max-width: 700px; }
     }
 
     /* ============================================================
@@ -491,38 +501,6 @@
       .garantia-box p { margin-left: 0; }
     }
 
-    /* Tablet: 600–768px — empilhado, mockup 80% */
-    @media (min-width: 600px) and (max-width: 767px) {
-      .mockup-wrap {
-        width: 80vw;
-        max-width: 80vw;
-      }
-    }
-
-    /* Desktop: acima de 768px — lado a lado, 50/50 */
-    @media (min-width: 768px) {
-      .hero-inner {
-        flex-direction: row;
-        align-items: center;
-        gap: 48px;
-        text-align: left;
-      }
-      .hero-text {
-        flex: 1 1 50%;
-        min-width: 0;
-      }
-      #hero h1 { margin-left: 0; margin-right: 0; max-width: none; }
-      .hero-sub { margin-left: 0; margin-right: 0; max-width: none; }
-      .hero-cta-wrap { margin-left: 0; margin-right: 0; max-width: none; }
-      .hero-safe { text-align: left; }
-      .mockup-wrap {
-        flex: 1 1 50%;
-        min-width: 0;
-        width: auto;
-        max-width: 500px;
-        margin: 0;
-      }
-    }
   </style>
 
   <!-- PIXEL DO META: Cole aqui o código do Pixel quando configurar a campanha -->
